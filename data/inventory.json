@@ -1,32 +1,19 @@
 {
-  "categories": [
-    {
-      "id": "1",
-      "name": "Pokemon",
-      "cards": [
-        {
-          "id": "1",
-          "name": "frank",
-          "front": "/static\\uploads\\f_0_20250224232006.jpg",
-          "back": "/static\\uploads\\b_0_20250224232009.jpg",
-          "claimed_by": null
-        }
-      ]
-    }
-  ],
+  "categories": [],
   "embed": {
-    "title": "Pokemon 1",
+    "title": "",
     "description": "",
     "button_label": "Explore",
-    "color": "#ff0000",
-    "thumbnail": "/static/uploads\\20250224232009.jpg",
+    "color": "#ffffff",
+    "thumbnail": "",
     "image": "",
     "footer": ""
   },
   "settings": {
-    "inventory_channel_id": "1384726848277053521",
-    "claims_channel_id": "1391597319149060146",
-    "image_channel_id": "1391566096842227785",
-    "grid_size": 3
+    "inventory_channel_id": "",
+    "claims_channel_id": "",
+    "image_channel_id": "",
+    "grid_size": 3,
+    "claims_message_id": ""
   }
 }

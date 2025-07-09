@@ -111,3 +111,8 @@ input[type="text"], input[type="number"], textarea {
   display: block;
   margin: 0 auto 4px;
 }
+
+.error {
+  color: #ef4444;
+  margin-bottom: 10px;
+}

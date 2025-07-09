@@ -37,10 +37,18 @@ def build_category_embed(cat, config=None):
     except ValueError:
         color = 0xFFFFFF
     embed = discord.Embed(title=title, description=description, color=color)
-    if config.get('thumbnail'):
-        embed.set_thumbnail(url=config['thumbnail'])
-    if config.get('image'):
-        embed.set_image(url=config['image'])
+    thumb = config.get('thumbnail')
+    if thumb and thumb.startswith(('http://', 'https://')):
+        embed.set_thumbnail(url=thumb)
+    else:
+        if thumb:
+            logger.warning('Invalid thumbnail URL %s', thumb)
+    img = config.get('image')
+    if img and img.startswith(('http://', 'https://')):
+        embed.set_image(url=img)
+    else:
+        if img:
+            logger.warning('Invalid image URL %s', img)
     if config.get('footer'):
         embed.set_footer(text=config['footer'])
     return embed
