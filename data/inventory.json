@@ -1,0 +1,19 @@
+{
+  "categories": [],
+  "embed": {
+    "title": "",
+    "description": "",
+    "button_label": "Explore",
+    "color": "#ffffff",
+    "thumbnail": "",
+    "image": "",
+    "footer": ""
+  },
+  "settings": {
+    "inventory_channel_id": "",
+    "claims_channel_id": "",
+    "image_channel_id": "",
+    "grid_size": 3,
+    "claims_message_id": ""
+  }
+}

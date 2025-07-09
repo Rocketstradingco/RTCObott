@@ -1,0 +1,35 @@
+{% extends 'layout.html' %}
+{% block content %}
+  <h2>{{ category.name }}</h2>
+  <form method="post">
+    <input type="hidden" name="action" value="add-card">
+    <label>Name: <input type="text" name="name"></label>
+    <label>Front URL: <input type="text" name="front"></label>
+    <label>Back URL: <input type="text" name="back"></label>
+    <button type="submit" class="button">Add Card</button>
+  </form>
+  <h3>Batch Add</h3>
+  <form method="post" enctype="multipart/form-data">
+    <input type="hidden" name="action" value="batch-add">
+    <label>Card Names (one per line):<br>
+      <textarea name="names" rows="4" cols="40"></textarea>
+    </label><br>
+    <label>Images (front/back pairs):<input type="file" name="images" multiple></label><br>
+    <button type="submit" class="button">Upload</button>
+  </form>
+  <ul>
+  {% for card in category.cards %}
+    <li class="card">
+      <img src="{{ card.front }}" alt="" style="max-width:50px; vertical-align:middle;">
+      {{ card.name }} - {{ 'claimed by ' + card.claimed_by if card.claimed_by else 'unclaimed' }}
+      <form method="post" class="inline-form">
+        <input type="hidden" name="action" value="delete-card">
+        <input type="hidden" name="card_id" value="{{ card.id }}">
+        <button type="submit" class="button">Delete</button>
+      </form>
+    </li>
+  {% else %}
+    <li>No cards</li>
+  {% endfor %}
+  </ul>
+{% endblock %}
