@@ -17,7 +17,7 @@ This project contains a basic Discord bot and a web-based admin UI for managing 
    ```
    If you see `ModuleNotFoundError: No module named 'dotenv'`, ensure the
    `python-dotenv` package was installed by running the command above.
-3. Copy `example.env` to `.env` and fill in your Discord bot token and preferred settings.
+3. Copy `example.env` to `.env` and fill in your Discord bot token and preferred settings. If no `ADMIN_PASSWORD` is defined, the default login password is `change-me`.
 4. Run the web app and bot in separate terminals:
    ```bash
    python app.py

@@ -36,7 +36,7 @@ def require_login(func):
 def index():
     if request.method == 'POST':
         logger.debug('Login attempt')
-        if request.form.get('password') == os.getenv('ADMIN_PASSWORD'):
+        if request.form.get('password') == os.getenv('ADMIN_PASSWORD', 'change-me'):
             session['logged_in'] = True
             logger.debug('Login successful')
             return redirect('/inventory')
