@@ -2,6 +2,7 @@
   "categories": [
     {
       "id": "1",
+<<<<<<< Updated upstream
       "name": "Pokemon",
       "cards": [
         {
@@ -19,6 +20,10 @@
           "claimed_by": null
         }
       ]
+=======
+      "name": "Pokemon 1",
+      "cards": []
+>>>>>>> Stashed changes
     }
   ]
 }
