@@ -25,8 +25,11 @@ intents.message_content = True
 
 bot = commands.Bot(command_prefix='!', intents=intents)
 
-def build_category_embed(cat):
-    embed = discord.Embed(title=cat['name'], description='Explore cards')
+def build_category_embed(cat, config=None):
+    config = config or {}
+    title = config.get('title', cat['name'])
+    description = config.get('description', 'Explore cards')
+    embed = discord.Embed(title=title, description=description)
     return embed
 
 class ExploreView(discord.ui.View):
@@ -135,15 +138,17 @@ class CardView(discord.ui.View):
     async def back(self, interaction: discord.Interaction, button: discord.ui.Button):
         logger.debug('Returning to card list for category %s', self.cat['id'])
         view = ExploreView(self.user, self.cat)
-        embed = build_category_embed(self.cat)
+        data = load_data()
+        embed = build_category_embed(self.cat, data.get('embed'))
         await interaction.response.edit_message(embed=embed, view=view)
 
 @bot.command()
 async def register(ctx):
     logger.debug('Register command invoked by %s', ctx.author)
     data = load_data()
+    embed_cfg = data.get('embed', {})
     for cat in data['categories']:
-        embed = build_category_embed(cat)
+        embed = build_category_embed(cat, embed_cfg)
         view = discord.ui.View()
         view.add_item(discord.ui.Button(label='Explore', custom_id=f'explore_{cat["id"]}'))
         msg = await ctx.send(embed=embed, view=view)
@@ -169,7 +174,7 @@ async def on_interaction(interaction: discord.Interaction):
                 await interaction.response.send_message('Category missing', ephemeral=True)
                 return
             view = ExploreView(interaction.user, cat)
-            embed = build_category_embed(cat)
+            embed = build_category_embed(cat, data.get('embed'))
             await interaction.response.send_message(embed=embed, ephemeral=True, view=view)
 
 if __name__ == '__main__':

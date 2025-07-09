@@ -1,4 +1,13 @@
-from flask import Flask, request, redirect, render_template, render_template_string, session
+from flask import (
+    Flask,
+    request,
+    redirect,
+    render_template,
+    render_template_string,
+    session,
+    url_for,
+)
+from werkzeug.utils import secure_filename
 from data_manager import load_data, save_data
 import logging
 try:
@@ -52,6 +61,23 @@ def inventory():
     return render_template('inventory.html', data=data)
 
 
+@app.route('/embed-builder', methods=['GET', 'POST'])
+@require_login
+def embed_builder():
+    logger.debug('Accessing embed builder')
+    data = load_data()
+    embed = data.get('embed', {})
+    if request.method == 'POST':
+        embed = {
+            'title': request.form.get('title', ''),
+            'description': request.form.get('description', ''),
+            'button_label': request.form.get('button_label', 'Explore'),
+        }
+        data['embed'] = embed
+        save_data(data)
+    return render_template('embed_builder.html', embed=embed)
+
+
 @app.route('/add-category', methods=['GET', 'POST'])
 @require_login
 def add_category():
@@ -84,17 +110,47 @@ def manage_category(cat_id):
     if not cat:
         logger.debug('Category %s not found', cat_id)
         return 'Category not found', 404
-    if request.method == 'POST' and request.form.get('action') == 'add-card':
-        card = {
-            'id': str(len(cat['cards']) + 1),
-            'name': request.form.get('name'),
-            'front': request.form.get('front'),
-            'back': request.form.get('back'),
-            'claimed_by': None
-        }
-        logger.debug('Adding card %s to category %s', card['name'], cat_id)
-        cat['cards'].append(card)
-        save_data(data)
+    if request.method == 'POST':
+        action = request.form.get('action')
+        if action == 'add-card':
+            card = {
+                'id': str(len(cat['cards']) + 1),
+                'name': request.form.get('name'),
+                'front': request.form.get('front'),
+                'back': request.form.get('back'),
+                'claimed_by': None,
+            }
+            logger.debug('Adding card %s to category %s', card['name'], cat_id)
+            cat['cards'].append(card)
+            save_data(data)
+        elif action == 'batch-add':
+            names = [n.strip() for n in request.form.get('names', '').splitlines() if n.strip()]
+            files = request.files.getlist('images')
+            logger.debug('Batch adding %s cards with %s images', len(names), len(files))
+            upload_dir = os.path.join('static', 'uploads')
+            os.makedirs(upload_dir, exist_ok=True)
+            for idx, name in enumerate(names):
+                front_file = files[2*idx] if len(files) > 2*idx else None
+                back_file = files[2*idx+1] if len(files) > 2*idx+1 else None
+                front_path = back_path = ''
+                if front_file:
+                    fname = secure_filename(front_file.filename)
+                    front_path = os.path.join(upload_dir, f'f_{len(cat["cards"])}_{fname}')
+                    front_file.save(front_path)
+                if back_file:
+                    fname = secure_filename(back_file.filename)
+                    back_path = os.path.join(upload_dir, f'b_{len(cat["cards"])}_{fname}')
+                    back_file.save(back_path)
+                card = {
+                    'id': str(len(cat['cards']) + 1),
+                    'name': name,
+                    'front': '/' + front_path if front_path else '',
+                    'back': '/' + back_path if back_path else '',
+                    'claimed_by': None,
+                }
+                logger.debug('Batch add card %s', card['name'])
+                cat['cards'].append(card)
+            save_data(data)
     return render_template('category.html', category=cat)
 
 
