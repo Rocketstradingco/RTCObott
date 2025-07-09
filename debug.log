@@ -100,3 +100,259 @@
 2025-07-09 02:30:51,470 [INFO] discord.client: logging in using static token
 2025-07-09 02:30:52,396 [INFO] discord.gateway: Shard ID None has connected to Gateway (Session ID: 088f31f3f221d6af2a0d33032887f666).
 2025-07-09 02:30:54,420 [INFO] __main__: Logged in as RTCO Shop#0792
+2025-07-09 02:33:35,163 [INFO] __main__: Starting Flask app
+2025-07-09 02:33:35,193 [INFO] werkzeug: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-07-09 02:33:35,193 [INFO] werkzeug: [33mPress CTRL+C to quit[0m
+2025-07-09 02:33:35,194 [INFO] werkzeug:  * Restarting with stat
+2025-07-09 02:33:35,607 [INFO] __main__: Starting Flask app
+2025-07-09 02:33:35,623 [WARNING] werkzeug:  * Debugger is active!
+2025-07-09 02:33:35,627 [INFO] werkzeug:  * Debugger PIN: 897-057-338
+2025-07-09 02:33:42,738 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 02:33:42] "GET / HTTP/1.1" 200 -
+2025-07-09 02:33:42,762 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 02:33:42] "GET /static/styles.css HTTP/1.1" 200 -
+2025-07-09 02:33:46,349 [DEBUG] __main__: Login attempt
+2025-07-09 02:33:46,350 [DEBUG] __main__: Login successful
+2025-07-09 02:33:46,351 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 02:33:46] "[32mPOST / HTTP/1.1[0m" 302 -
+2025-07-09 02:33:46,354 [DEBUG] __main__: Rendering inventory list
+2025-07-09 02:33:46,354 [DEBUG] data_manager: Loading data from data\inventory.json
+2025-07-09 02:33:46,357 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 02:33:46] "GET /inventory HTTP/1.1" 200 -
+2025-07-09 02:33:46,384 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 02:33:46] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2025-07-09 02:33:49,391 [DEBUG] __main__: Accessing embed builder
+2025-07-09 02:33:49,391 [DEBUG] data_manager: Loading data from data\inventory.json
+2025-07-09 02:33:49,394 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 02:33:49] "GET /embed-builder HTTP/1.1" 200 -
+2025-07-09 02:33:49,413 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 02:33:49] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2025-07-09 02:33:49,414 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 02:33:49] "GET /static/main.js HTTP/1.1" 200 -
+2025-07-09 02:33:52,276 [DEBUG] __main__: Accessing settings
+2025-07-09 02:33:52,276 [DEBUG] data_manager: Loading data from data\inventory.json
+2025-07-09 02:33:52,279 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 02:33:52] "GET /settings HTTP/1.1" 200 -
+2025-07-09 02:33:52,291 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 02:33:52] "GET /static/styles.css HTTP/1.1" 200 -
+2025-07-09 02:33:52,295 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 02:33:52] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-07-09 02:33:55,370 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 02:33:55] "GET /uploads HTTP/1.1" 200 -
+2025-07-09 02:33:55,388 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 02:33:55] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2025-07-09 02:33:55,390 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 02:33:55] "GET /static/uploads/.gitkeep HTTP/1.1" 200 -
+2025-07-09 02:34:37,958 [DEBUG] __main__: Uploading 8 images
+2025-07-09 02:34:38,037 [DEBUG] __main__: Saved image static\uploads\20250224232006.jpg
+2025-07-09 02:34:38,037 [DEBUG] __main__: Saved image static\uploads\20250224232009.jpg
+2025-07-09 02:34:38,039 [DEBUG] __main__: Saved image static\uploads\20250224232012.jpg
+2025-07-09 02:34:38,040 [DEBUG] __main__: Saved image static\uploads\20250224232015.jpg
+2025-07-09 02:34:38,041 [DEBUG] __main__: Saved image static\uploads\20250224232018.jpg
+2025-07-09 02:34:38,042 [DEBUG] __main__: Saved image static\uploads\20250224232022.jpg
+2025-07-09 02:34:38,043 [DEBUG] __main__: Saved image static\uploads\20250224232025.jpg
+2025-07-09 02:34:38,044 [DEBUG] __main__: Saved image static\uploads\20250224232028.jpg
+2025-07-09 02:34:38,045 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 02:34:38] "POST /uploads HTTP/1.1" 200 -
+2025-07-09 02:34:38,063 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 02:34:38] "[36mGET /static/uploads/.gitkeep HTTP/1.1[0m" 304 -
+2025-07-09 02:34:38,080 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 02:34:38] "GET /static/uploads/20250224232009.jpg HTTP/1.1" 200 -
+2025-07-09 02:34:38,082 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 02:34:38] "GET /static/uploads/20250224232006.jpg HTTP/1.1" 200 -
+2025-07-09 02:34:38,088 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 02:34:38] "GET /static/uploads/20250224232012.jpg HTTP/1.1" 200 -
+2025-07-09 02:34:38,092 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 02:34:38] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2025-07-09 02:34:38,103 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 02:34:38] "GET /static/uploads/20250224232015.jpg HTTP/1.1" 200 -
+2025-07-09 02:34:38,106 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 02:34:38] "GET /static/uploads/20250224232018.jpg HTTP/1.1" 200 -
+2025-07-09 02:34:38,116 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 02:34:38] "GET /static/uploads/20250224232028.jpg HTTP/1.1" 200 -
+2025-07-09 02:34:38,142 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 02:34:38] "GET /static/uploads/20250224232025.jpg HTTP/1.1" 200 -
+2025-07-09 02:34:38,144 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 02:34:38] "GET /static/uploads/20250224232022.jpg HTTP/1.1" 200 -
+2025-07-09 02:35:01,339 [DEBUG] __main__: Rendering inventory list
+2025-07-09 02:35:01,339 [DEBUG] data_manager: Loading data from data\inventory.json
+2025-07-09 02:35:01,340 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 02:35:01] "GET /inventory HTTP/1.1" 200 -
+2025-07-09 02:35:01,355 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 02:35:01] "GET /static/styles.css HTTP/1.1" 200 -
+2025-07-09 02:35:01,359 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 02:35:01] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-07-09 02:35:02,818 [DEBUG] data_manager: Loading data from data\inventory.json
+2025-07-09 02:35:02,819 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 02:35:02] "GET /add-category HTTP/1.1" 200 -
+2025-07-09 02:35:02,835 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 02:35:02] "GET /static/styles.css HTTP/1.1" 200 -
+2025-07-09 02:35:02,843 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 02:35:02] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-07-09 02:35:09,559 [DEBUG] data_manager: Loading data from data\inventory.json
+2025-07-09 02:35:09,559 [DEBUG] __main__: Adding category Pokemon
+2025-07-09 02:35:09,559 [DEBUG] data_manager: Saving data to data\inventory.json
+2025-07-09 02:35:09,560 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 02:35:09] "[32mPOST /add-category HTTP/1.1[0m" 302 -
+2025-07-09 02:35:09,563 [DEBUG] __main__: Rendering inventory list
+2025-07-09 02:35:09,564 [DEBUG] data_manager: Loading data from data\inventory.json
+2025-07-09 02:35:09,576 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 02:35:09] "GET /inventory HTTP/1.1" 200 -
+2025-07-09 02:35:09,593 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 02:35:09] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2025-07-09 02:35:11,925 [DEBUG] __main__: Managing category 1
+2025-07-09 02:35:11,925 [DEBUG] data_manager: Loading data from data\inventory.json
+2025-07-09 02:35:11,929 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 02:35:11] "GET /category/1 HTTP/1.1" 200 -
+2025-07-09 02:35:11,950 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 02:35:11] "GET /static/styles.css HTTP/1.1" 200 -
+2025-07-09 02:35:33,210 [DEBUG] __main__: Managing category 1
+2025-07-09 02:35:33,210 [DEBUG] data_manager: Loading data from data\inventory.json
+2025-07-09 02:35:33,376 [DEBUG] __main__: Batch adding 1 cards with 2 images
+2025-07-09 02:35:33,378 [DEBUG] __main__: Batch add card frank
+2025-07-09 02:35:33,378 [DEBUG] data_manager: Saving data to data\inventory.json
+2025-07-09 02:35:33,379 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 02:35:33] "POST /category/1 HTTP/1.1" 200 -
+2025-07-09 02:35:33,393 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 02:35:33] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2025-07-09 02:35:33,408 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 02:35:33] "GET /static/uploads/f_0_20250224232006.jpg HTTP/1.1" 200 -
+2025-07-09 02:35:35,424 [DEBUG] __main__: Accessing settings
+2025-07-09 02:35:35,424 [DEBUG] data_manager: Loading data from data\inventory.json
+2025-07-09 02:35:35,431 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 02:35:35] "GET /settings HTTP/1.1" 200 -
+2025-07-09 02:35:35,452 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 02:35:35] "GET /static/styles.css HTTP/1.1" 200 -
+2025-07-09 02:35:35,458 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 02:35:35] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-07-09 02:36:07,863 [DEBUG] __main__: Accessing settings
+2025-07-09 02:36:07,863 [DEBUG] data_manager: Loading data from data\inventory.json
+2025-07-09 02:36:07,864 [DEBUG] data_manager: Saving data to data\inventory.json
+2025-07-09 02:36:07,866 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 02:36:07] "POST /settings HTTP/1.1" 200 -
+2025-07-09 02:36:07,882 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 02:36:07] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2025-07-09 02:36:11,874 [DEBUG] __main__: Accessing embed builder
+2025-07-09 02:36:11,874 [DEBUG] data_manager: Loading data from data\inventory.json
+2025-07-09 02:36:11,881 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 02:36:11] "GET /embed-builder HTTP/1.1" 200 -
+2025-07-09 02:36:11,899 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 02:36:11] "[36mGET /static/main.js HTTP/1.1[0m" 304 -
+2025-07-09 02:36:11,903 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 02:36:11] "GET /static/styles.css HTTP/1.1" 200 -
+2025-07-09 02:36:50,190 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 02:36:50] "[33mGET /1384726848277053521 HTTP/1.1[0m" 404 -
+2025-07-09 02:36:51,775 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 02:36:51] "[33mGET /138472684827705352 HTTP/1.1[0m" 404 -
+2025-07-09 02:36:52,026 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 02:36:52] "[33mGET /13847268482770535 HTTP/1.1[0m" 404 -
+2025-07-09 02:36:52,105 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 02:36:52] "[33mGET /1384726848277053 HTTP/1.1[0m" 404 -
+2025-07-09 02:36:52,170 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 02:36:52] "[33mGET /138472684827705 HTTP/1.1[0m" 404 -
+2025-07-09 02:36:52,226 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 02:36:52] "[33mGET /13847268482770 HTTP/1.1[0m" 404 -
+2025-07-09 02:36:52,289 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 02:36:52] "[33mGET /1384726848277 HTTP/1.1[0m" 404 -
+2025-07-09 02:36:52,369 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 02:36:52] "[33mGET /138472684827 HTTP/1.1[0m" 404 -
+2025-07-09 02:36:52,427 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 02:36:52] "[33mGET /13847268482 HTTP/1.1[0m" 404 -
+2025-07-09 02:36:52,489 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 02:36:52] "[33mGET /1384726848 HTTP/1.1[0m" 404 -
+2025-07-09 02:36:52,570 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 02:36:52] "[33mGET /138472684 HTTP/1.1[0m" 404 -
+2025-07-09 02:36:52,628 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 02:36:52] "[33mGET /13847268 HTTP/1.1[0m" 404 -
+2025-07-09 02:36:52,691 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 02:36:52] "[33mGET /1384726 HTTP/1.1[0m" 404 -
+2025-07-09 02:36:52,754 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 02:36:52] "[33mGET /138472 HTTP/1.1[0m" 404 -
+2025-07-09 02:36:52,830 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 02:36:52] "[33mGET /13847 HTTP/1.1[0m" 404 -
+2025-07-09 02:36:52,892 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 02:36:52] "[33mGET /1384 HTTP/1.1[0m" 404 -
+2025-07-09 02:36:52,954 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 02:36:52] "[33mGET /138 HTTP/1.1[0m" 404 -
+2025-07-09 02:36:53,017 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 02:36:53] "[33mGET /13 HTTP/1.1[0m" 404 -
+2025-07-09 02:36:53,094 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 02:36:53] "[33mGET /1 HTTP/1.1[0m" 404 -
+2025-07-09 02:36:54,905 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 02:36:54] "GET /uploads HTTP/1.1" 200 -
+2025-07-09 02:36:54,925 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 02:36:54] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2025-07-09 02:36:54,927 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 02:36:54] "[36mGET /static/uploads/.gitkeep HTTP/1.1[0m" 304 -
+2025-07-09 02:36:54,932 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 02:36:54] "[36mGET /static/uploads/20250224232006.jpg HTTP/1.1[0m" 304 -
+2025-07-09 02:36:54,938 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 02:36:54] "[36mGET /static/uploads/20250224232009.jpg HTTP/1.1[0m" 304 -
+2025-07-09 02:36:54,940 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 02:36:54] "GET /static/uploads/b_0_20250224232009.jpg HTTP/1.1" 200 -
+2025-07-09 02:36:54,941 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 02:36:54] "[36mGET /static/uploads/20250224232012.jpg HTTP/1.1[0m" 304 -
+2025-07-09 02:36:54,947 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 02:36:54] "[36mGET /static/uploads/20250224232018.jpg HTTP/1.1[0m" 304 -
+2025-07-09 02:36:54,947 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 02:36:54] "[36mGET /static/uploads/20250224232022.jpg HTTP/1.1[0m" 304 -
+2025-07-09 02:36:54,947 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 02:36:54] "[36mGET /static/uploads/20250224232015.jpg HTTP/1.1[0m" 304 -
+2025-07-09 02:36:54,953 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 02:36:54] "[36mGET /static/uploads/20250224232025.jpg HTTP/1.1[0m" 304 -
+2025-07-09 02:36:54,958 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 02:36:54] "[36mGET /static/uploads/f_0_20250224232006.jpg HTTP/1.1[0m" 304 -
+2025-07-09 02:36:54,958 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 02:36:54] "[36mGET /static/uploads/20250224232028.jpg HTTP/1.1[0m" 304 -
+2025-07-09 02:36:55,001 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 02:36:55] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-07-09 02:37:01,454 [DEBUG] __main__: Accessing settings
+2025-07-09 02:37:01,454 [DEBUG] data_manager: Loading data from data\inventory.json
+2025-07-09 02:37:01,454 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 02:37:01] "GET /settings HTTP/1.1" 200 -
+2025-07-09 02:37:01,469 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 02:37:01] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2025-07-09 02:37:03,707 [DEBUG] __main__: Accessing embed builder
+2025-07-09 02:37:03,707 [DEBUG] data_manager: Loading data from data\inventory.json
+2025-07-09 02:37:03,708 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 02:37:03] "GET /embed-builder HTTP/1.1" 200 -
+2025-07-09 02:37:03,725 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 02:37:03] "[36mGET /static/main.js HTTP/1.1[0m" 304 -
+2025-07-09 02:37:03,728 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 02:37:03] "GET /static/styles.css HTTP/1.1" 200 -
+2025-07-09 02:37:11,051 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 02:37:11] "[36mGET /static/uploads/20250224232009.jpg HTTP/1.1[0m" 304 -
+2025-07-09 02:37:14,590 [DEBUG] __main__: Accessing embed builder
+2025-07-09 02:37:14,590 [DEBUG] data_manager: Loading data from data\inventory.json
+2025-07-09 02:37:14,591 [DEBUG] data_manager: Saving data to data\inventory.json
+2025-07-09 02:37:14,592 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 02:37:14] "POST /embed-builder HTTP/1.1" 200 -
+2025-07-09 02:37:14,612 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 02:37:14] "[36mGET /static/main.js HTTP/1.1[0m" 304 -
+2025-07-09 02:37:14,612 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 02:37:14] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2025-07-09 02:37:14,620 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 02:37:14] "[36mGET /static/uploads/20250224232009.jpg HTTP/1.1[0m" 304 -
+2025-07-09 02:37:16,750 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 02:37:16] "GET /uploads HTTP/1.1" 200 -
+2025-07-09 02:37:16,773 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 02:37:16] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2025-07-09 02:37:16,775 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 02:37:16] "[36mGET /static/uploads/.gitkeep HTTP/1.1[0m" 304 -
+2025-07-09 02:37:16,777 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 02:37:16] "[36mGET /static/uploads/20250224232009.jpg HTTP/1.1[0m" 304 -
+2025-07-09 02:37:16,785 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 02:37:16] "[36mGET /static/uploads/20250224232006.jpg HTTP/1.1[0m" 304 -
+2025-07-09 02:37:16,787 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 02:37:16] "[36mGET /static/uploads/20250224232012.jpg HTTP/1.1[0m" 304 -
+2025-07-09 02:37:16,788 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 02:37:16] "[36mGET /static/uploads/20250224232015.jpg HTTP/1.1[0m" 304 -
+2025-07-09 02:37:16,792 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 02:37:16] "[36mGET /static/uploads/20250224232018.jpg HTTP/1.1[0m" 304 -
+2025-07-09 02:37:16,796 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 02:37:16] "[36mGET /static/uploads/20250224232028.jpg HTTP/1.1[0m" 304 -
+2025-07-09 02:37:16,796 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 02:37:16] "[36mGET /static/uploads/b_0_20250224232009.jpg HTTP/1.1[0m" 304 -
+2025-07-09 02:37:16,798 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 02:37:16] "[36mGET /static/uploads/f_0_20250224232006.jpg HTTP/1.1[0m" 304 -
+2025-07-09 02:37:16,836 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 02:37:16] "[36mGET /static/uploads/20250224232022.jpg HTTP/1.1[0m" 304 -
+2025-07-09 02:37:16,853 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 02:37:16] "[36mGET /static/uploads/20250224232025.jpg HTTP/1.1[0m" 304 -
+2025-07-09 02:37:18,659 [DEBUG] __main__: Accessing settings
+2025-07-09 02:37:18,659 [DEBUG] data_manager: Loading data from data\inventory.json
+2025-07-09 02:37:18,673 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 02:37:18] "GET /settings HTTP/1.1" 200 -
+2025-07-09 02:37:18,691 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 02:37:18] "GET /static/styles.css HTTP/1.1" 200 -
+2025-07-09 02:37:20,677 [DEBUG] __main__: Accessing embed builder
+2025-07-09 02:37:20,677 [DEBUG] data_manager: Loading data from data\inventory.json
+2025-07-09 02:37:20,678 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 02:37:20] "GET /embed-builder HTTP/1.1" 200 -
+2025-07-09 02:37:20,706 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 02:37:20] "[36mGET /static/main.js HTTP/1.1[0m" 304 -
+2025-07-09 02:37:20,707 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 02:37:20] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2025-07-09 02:37:20,719 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 02:37:20] "[36mGET /static/uploads/20250224232009.jpg HTTP/1.1[0m" 304 -
+2025-07-09 02:37:42,032 [DEBUG] __main__: Accessing embed builder
+2025-07-09 02:37:42,032 [DEBUG] data_manager: Loading data from data\inventory.json
+2025-07-09 02:37:42,033 [DEBUG] data_manager: Saving data to data\inventory.json
+2025-07-09 02:37:42,036 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 02:37:42] "POST /embed-builder HTTP/1.1" 200 -
+2025-07-09 02:37:42,052 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 02:37:42] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2025-07-09 02:37:42,053 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 02:37:42] "[36mGET /static/main.js HTTP/1.1[0m" 304 -
+2025-07-09 02:37:42,061 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 02:37:42] "[36mGET /static/uploads/20250224232009.jpg HTTP/1.1[0m" 304 -
+2025-07-09 02:37:47,275 [DEBUG] __main__: Accessing settings
+2025-07-09 02:37:47,275 [DEBUG] data_manager: Loading data from data\inventory.json
+2025-07-09 02:37:47,282 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 02:37:47] "GET /settings HTTP/1.1" 200 -
+2025-07-09 02:37:47,297 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 02:37:47] "GET /static/styles.css HTTP/1.1" 200 -
+2025-07-09 02:37:48,574 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 02:37:48] "GET /uploads HTTP/1.1" 200 -
+2025-07-09 02:37:48,602 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 02:37:48] "GET /static/styles.css HTTP/1.1" 200 -
+2025-07-09 02:37:48,605 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 02:37:48] "GET /static/uploads/.gitkeep HTTP/1.1" 200 -
+2025-07-09 02:37:48,610 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 02:37:48] "[36mGET /static/uploads/20250224232006.jpg HTTP/1.1[0m" 304 -
+2025-07-09 02:37:48,616 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 02:37:48] "[36mGET /static/uploads/20250224232009.jpg HTTP/1.1[0m" 304 -
+2025-07-09 02:37:48,618 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 02:37:48] "[36mGET /static/uploads/20250224232015.jpg HTTP/1.1[0m" 304 -
+2025-07-09 02:37:48,620 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 02:37:48] "[36mGET /static/uploads/20250224232012.jpg HTTP/1.1[0m" 304 -
+2025-07-09 02:37:48,621 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 02:37:48] "[36mGET /static/uploads/20250224232018.jpg HTTP/1.1[0m" 304 -
+2025-07-09 02:37:48,625 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 02:37:48] "[36mGET /static/uploads/20250224232022.jpg HTTP/1.1[0m" 304 -
+2025-07-09 02:37:48,628 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 02:37:48] "[36mGET /static/uploads/20250224232025.jpg HTTP/1.1[0m" 304 -
+2025-07-09 02:37:48,632 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 02:37:48] "[36mGET /static/uploads/20250224232028.jpg HTTP/1.1[0m" 304 -
+2025-07-09 02:37:48,636 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 02:37:48] "[36mGET /static/uploads/f_0_20250224232006.jpg HTTP/1.1[0m" 304 -
+2025-07-09 02:37:48,639 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 02:37:48] "[36mGET /static/uploads/b_0_20250224232009.jpg HTTP/1.1[0m" 304 -
+2025-07-09 02:37:50,953 [DEBUG] __main__: Accessing embed builder
+2025-07-09 02:37:50,953 [DEBUG] data_manager: Loading data from data\inventory.json
+2025-07-09 02:37:50,953 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 02:37:50] "GET /embed-builder HTTP/1.1" 200 -
+2025-07-09 02:37:50,975 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 02:37:50] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2025-07-09 02:37:50,976 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 02:37:50] "[36mGET /static/main.js HTTP/1.1[0m" 304 -
+2025-07-09 02:37:50,983 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 02:37:50] "[36mGET /static/uploads/20250224232009.jpg HTTP/1.1[0m" 304 -
+2025-07-09 02:37:51,691 [DEBUG] __main__: Rendering inventory list
+2025-07-09 02:37:51,692 [DEBUG] data_manager: Loading data from data\inventory.json
+2025-07-09 02:37:51,692 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 02:37:51] "GET /inventory HTTP/1.1" 200 -
+2025-07-09 02:37:51,713 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 02:37:51] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2025-07-09 02:40:45,862 [INFO] __main__: Starting Flask app
+2025-07-09 02:40:45,892 [INFO] werkzeug: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-07-09 02:40:45,892 [INFO] werkzeug: [33mPress CTRL+C to quit[0m
+2025-07-09 02:40:45,893 [INFO] werkzeug:  * Restarting with stat
+2025-07-09 02:40:46,295 [INFO] __main__: Starting Flask app
+2025-07-09 02:40:46,314 [WARNING] werkzeug:  * Debugger is active!
+2025-07-09 02:40:46,318 [INFO] werkzeug:  * Debugger PIN: 897-057-338
+2025-07-09 02:41:23,349 [WARNING] discord.client: PyNaCl is not installed, voice will NOT be supported
+2025-07-09 02:41:23,349 [DEBUG] discord.client: on_ready has successfully been registered as an event
+2025-07-09 02:41:23,349 [DEBUG] discord.client: on_interaction has successfully been registered as an event
+2025-07-09 02:41:23,349 [INFO] __main__: Starting Discord bot
+2025-07-09 02:41:23,350 [DEBUG] asyncio: Using proactor: IocpProactor
+2025-07-09 02:41:23,350 [INFO] discord.client: logging in using static token
+2025-07-09 02:41:24,157 [INFO] discord.gateway: Shard ID None has connected to Gateway (Session ID: f51dd20d51fca7fa5e13878c69aea35c).
+2025-07-09 02:41:26,184 [INFO] __main__: Logged in as RTCO Shop#0792
+2025-07-09 02:41:34,092 [DEBUG] __main__: Rendering inventory list
+2025-07-09 02:41:34,092 [DEBUG] data_manager: Loading data from data\inventory.json
+2025-07-09 02:41:34,103 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 02:41:34] "GET /inventory HTTP/1.1" 200 -
+2025-07-09 02:41:34,120 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 02:41:34] "GET /static/styles.css HTTP/1.1" 200 -
+2025-07-09 02:41:40,931 [DEBUG] __main__: Accessing settings
+2025-07-09 02:41:40,932 [DEBUG] data_manager: Loading data from data\inventory.json
+2025-07-09 02:41:40,936 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 02:41:40] "GET /settings HTTP/1.1" 200 -
+2025-07-09 02:41:40,957 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 02:41:40] "GET /static/styles.css HTTP/1.1" 200 -
+2025-07-09 02:41:42,745 [DEBUG] __main__: Accessing settings
+2025-07-09 02:41:42,745 [DEBUG] data_manager: Loading data from data\inventory.json
+2025-07-09 02:41:42,747 [DEBUG] data_manager: Saving data to data\inventory.json
+2025-07-09 02:41:42,748 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 02:41:42] "POST /settings HTTP/1.1" 200 -
+2025-07-09 02:41:42,764 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 02:41:42] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2025-07-09 02:42:46,532 [DEBUG] __main__: Register command invoked by rocketstradingco.
+2025-07-09 02:42:46,533 [DEBUG] data_manager: Loading data from data\inventory.json
+2025-07-09 02:42:46,749 [ERROR] discord.ext.commands.bot: Ignoring exception in command register
+Traceback (most recent call last):
+  File "C:\Users\RTCO STREAMS\AppData\Local\Programs\Python\Python38\lib\site-packages\discord\ext\commands\core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "C:\Users\RTCO STREAMS\Documents\git\RTCObott\bot.py", line 213, in register
+    msg = await channel.send(embed=embed, view=view)
+  File "C:\Users\RTCO STREAMS\AppData\Local\Programs\Python\Python38\lib\site-packages\discord\abc.py", line 1644, in send
+    data = await state.http.send_message(channel.id, params=params)
+  File "C:\Users\RTCO STREAMS\AppData\Local\Programs\Python\Python38\lib\site-packages\discord\http.py", line 762, in request
+    raise HTTPException(response, data)
+discord.errors.HTTPException: 400 Bad Request (error code: 50035): Invalid Form Body
+In embeds.0.thumbnail.url: Not a well formed URL.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\RTCO STREAMS\AppData\Local\Programs\Python\Python38\lib\site-packages\discord\ext\commands\bot.py", line 1366, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\RTCO STREAMS\AppData\Local\Programs\Python\Python38\lib\site-packages\discord\ext\commands\core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "C:\Users\RTCO STREAMS\AppData\Local\Programs\Python\Python38\lib\site-packages\discord\ext\commands\core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: HTTPException: 400 Bad Request (error code: 50035): Invalid Form Body
+In embeds.0.thumbnail.url: Not a well formed URL.
