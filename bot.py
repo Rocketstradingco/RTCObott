@@ -18,6 +18,9 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 TOKEN = os.getenv('DISCORD_TOKEN')
+if not TOKEN:
+    logger.error('DISCORD_TOKEN not configured; set it in your environment or .env file')
+    raise SystemExit('Missing DISCORD_TOKEN')
 
 intents = discord.Intents.default()
 intents.messages = True

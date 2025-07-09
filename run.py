@@ -7,6 +7,9 @@ import signal
 
 def main():
     env = os.environ.copy()
+    if not env.get('DISCORD_TOKEN'):
+        print('Error: DISCORD_TOKEN not set. Check your .env file.')
+        return
     app_proc = subprocess.Popen([sys.executable, 'app.py'], env=env)
     bot_proc = subprocess.Popen([sys.executable, 'bot.py'], env=env)
     procs = [app_proc, bot_proc]
