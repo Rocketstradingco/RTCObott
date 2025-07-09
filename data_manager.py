@@ -31,8 +31,15 @@ def load_data():
     """Load inventory and embed configuration."""
     logger.debug('Loading data from %s', DATA_FILE)
     if DATA_FILE.exists():
-        with open(DATA_FILE) as f:
-            data = json.load(f)
+        try:
+            with open(DATA_FILE) as f:
+                data = json.load(f)
+        except json.JSONDecodeError:
+            logger.error('Corrupted JSON in %s, backing up and resetting', DATA_FILE)
+            backup = DATA_FILE.with_suffix(DATA_FILE.suffix + '.bak')
+            DATA_FILE.rename(backup)
+            logger.info('Moved bad file to %s', backup)
+            data = DEFAULT_DATA.copy()
         for k, v in DEFAULT_DATA.items():
             if isinstance(v, dict):
                 data.setdefault(k, {})
