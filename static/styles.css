@@ -1,11 +1,21 @@
 body {
-  background: #1a1a1a;
+  background: linear-gradient(135deg, #1a1a1a, #2c2c2c);
   color: #f0f0f0;
   font-family: 'Inter', sans-serif;
 }
 header, nav, main {
   margin: 0 auto;
   max-width: 800px;
+  padding: 0 10px;
+}
+nav.tabs {
+  background: linear-gradient(90deg, #2c2c2c, #3d3d3d);
+  padding-top: 4px;
+}
+header {
+  background: linear-gradient(90deg, #1a1a1a, #2c2c2c);
+  padding: 10px 0;
+  margin-bottom: 10px;
 }
 .tabs {
   display: flex;
@@ -57,6 +67,9 @@ a {
   margin: 5px;
   border-radius: 4px;
 }
+.card form, form.card {
+  margin-bottom: 10px;
+}
 
 .card img {
   max-width: 50px;
@@ -75,4 +88,26 @@ input[type="text"], input[type="number"], textarea {
   padding: 4px;
   width: 100%;
   max-width: 400px;
+}
+
+.thumb-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+.thumb-list li {
+  margin: 4px;
+  text-align: center;
+  background: #2c2c2c;
+  padding: 6px;
+  border-radius: 4px;
+  width: 120px;
+  word-break: break-all;
+}
+.thumb-list img.thumb {
+  max-width: 100px;
+  max-height: 100px;
+  display: block;
+  margin: 0 auto 4px;
 }

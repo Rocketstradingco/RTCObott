@@ -11,6 +11,7 @@ This project contains a basic Discord bot and a web-based admin UI for managing 
 - Batch add cards with paired front/back images.
 - Customize embed title, description, button text, color, images and footer via the Embed Builder tab with a live preview.
 - Delete categories and cards directly from the admin pages.
+- Upload and manage image files from the **Uploads** tab.
 - Admin options are organized into tabs for clarity.
 - Configure channel IDs and grid size from the new **Settings** tab.
 - Claims are summarized in a persistent message that updates whenever a card is claimed or unclaimed.
@@ -31,10 +32,18 @@ This project contains a basic Discord bot and a web-based admin UI for managing 
    ```bash
    python bot.py
    ```
+   Do **not** combine these commands with an `&` on Windows as it can close the
+   event loop prematurely. To start both at once you can instead run:
+   ```bash
+   python run.py
+   ```
 
 Use the **Settings** tab in the admin UI to set the channel IDs used for
 inventory messages, claims updates and the image dump. You can also adjust the
 grid size used when browsing cards.
+
+Upload reference images directly from the **Uploads** tab and then copy the URLs
+when adding cards or building embeds.
 
 The bot reads configuration from `.env` and `data/inventory.json`.
 
