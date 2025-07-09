@@ -22,6 +22,7 @@ DEFAULT_DATA = {
         "claims_channel_id": "",
         "image_channel_id": "",
         "grid_size": 3,
+        "claims_message_id": "",
     },
 }
 

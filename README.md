@@ -13,6 +13,7 @@ This project contains a basic Discord bot and a web-based admin UI for managing 
 - Delete categories and cards directly from the admin pages.
 - Admin options are organized into tabs for clarity.
 - Configure channel IDs and grid size from the new **Settings** tab.
+- Claims are summarized in a persistent message that updates whenever a card is claimed or unclaimed.
 
 ## Setup
 1. Create a Discord application and bot, then obtain your token.

@@ -42,6 +42,37 @@ def build_category_embed(cat, config=None):
         embed.set_footer(text=config['footer'])
     return embed
 
+
+async def update_claims_message(guild):
+    """Update or create the persistent claims summary message."""
+    data = load_data()
+    settings = data.get('settings', {})
+    channel_id = settings.get('claims_channel_id')
+    if not channel_id:
+        return
+    channel = guild.get_channel(int(channel_id))
+    if not channel:
+        return
+    # Build summary
+    lines = []
+    for cat in data.get('categories', []):
+        for card in cat.get('cards', []):
+            if card.get('claimed_by'):
+                lines.append(f"{card['name']} - {card['claimed_by']}")
+    summary = "\n".join(lines) or "No claims yet"
+    message_id = settings.get('claims_message_id')
+    msg = None
+    if message_id:
+        try:
+            msg = await channel.fetch_message(int(message_id))
+            await msg.edit(content=summary)
+        except discord.NotFound:
+            msg = None
+    if msg is None:
+        msg = await channel.send(summary)
+        settings['claims_message_id'] = str(msg.id)
+        save_data(data)
+
 class ExploreView(discord.ui.View):
     def __init__(self, user, cat, grid_size):
         super().__init__(timeout=300)
@@ -129,6 +160,7 @@ class CardView(discord.ui.View):
             card['claimed_by'] = interaction.user.name
             save_data(data)
             await interaction.response.send_message('Claimed!', ephemeral=True)
+            await update_claims_message(interaction.guild)
         else:
             await interaction.response.send_message('Already claimed', ephemeral=True)
 
@@ -142,6 +174,7 @@ class CardView(discord.ui.View):
             card['claimed_by'] = None
             save_data(data)
             await interaction.response.send_message('Unclaimed', ephemeral=True)
+            await update_claims_message(interaction.guild)
         else:
             await interaction.response.send_message('Cannot unclaim', ephemeral=True)
 
@@ -166,14 +199,20 @@ async def register(ctx):
         chan = ctx.guild.get_channel(int(settings['inventory_channel_id']))
         if chan:
             channel = chan
+    claims_chan = None
+    if settings.get('claims_channel_id'):
+        claims_chan = ctx.guild.get_channel(int(settings['claims_channel_id']))
     for cat in data['categories']:
         embed = build_category_embed(cat, embed_cfg)
         view = discord.ui.View()
-        view.add_item(discord.ui.Button(label='Explore', custom_id=f'explore_{cat["id"]}'))
+        label = embed_cfg.get('button_label', 'Explore')
+        view.add_item(discord.ui.Button(label=label, custom_id=f'explore_{cat["id"]}'))
         msg = await channel.send(embed=embed, view=view)
         cat['message_id'] = msg.id
     save_data(data)
     await ctx.send('Registration complete.')
+    if claims_chan:
+        await update_claims_message(ctx.guild)
 
 @bot.event
 async def on_ready():
