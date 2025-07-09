@@ -60,3 +60,35 @@
 2025-07-09 02:11:58,348 [INFO] __main__: Starting Flask app
 2025-07-09 02:11:58,366 [WARNING] werkzeug:  * Debugger is active!
 2025-07-09 02:11:58,371 [INFO] werkzeug:  * Debugger PIN: 897-057-338
+2025-07-09 02:24:13,625 [INFO] __main__: Starting Flask app
+2025-07-09 02:24:13,655 [INFO] werkzeug: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-07-09 02:24:13,655 [INFO] werkzeug: [33mPress CTRL+C to quit[0m
+2025-07-09 02:24:13,657 [INFO] werkzeug:  * Restarting with stat
+2025-07-09 02:24:14,071 [INFO] __main__: Starting Flask app
+2025-07-09 02:24:14,087 [WARNING] werkzeug:  * Debugger is active!
+2025-07-09 02:24:14,091 [INFO] werkzeug:  * Debugger PIN: 897-057-338
+2025-07-09 02:24:33,702 [WARNING] discord.client: PyNaCl is not installed, voice will NOT be supported
+2025-07-09 02:24:33,703 [DEBUG] discord.client: on_ready has successfully been registered as an event
+2025-07-09 02:24:33,703 [DEBUG] discord.client: on_interaction has successfully been registered as an event
+2025-07-09 02:24:33,703 [INFO] __main__: Starting Discord bot
+2025-07-09 02:24:33,703 [DEBUG] asyncio: Using proactor: IocpProactor
+2025-07-09 02:24:33,704 [INFO] discord.client: logging in using static token
+2025-07-09 02:24:34,400 [INFO] discord.gateway: Shard ID None has connected to Gateway (Session ID: b2f42224d4d461338adecd3c98c96b71).
+2025-07-09 02:24:36,435 [INFO] __main__: Logged in as RTCO Shop#0792
+2025-07-09 02:26:30,905 [INFO] __main__: Starting Flask app
+2025-07-09 02:26:30,927 [INFO] werkzeug: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-07-09 02:26:30,927 [INFO] werkzeug: [33mPress CTRL+C to quit[0m
+2025-07-09 02:26:30,929 [INFO] werkzeug:  * Restarting with stat
+2025-07-09 02:26:31,288 [INFO] __main__: Starting Flask app
+2025-07-09 02:26:31,305 [WARNING] werkzeug:  * Debugger is active!
+2025-07-09 02:26:31,309 [INFO] werkzeug:  * Debugger PIN: 897-057-338
+2025-07-09 02:26:54,738 [WARNING] discord.client: PyNaCl is not installed, voice will NOT be supported
+2025-07-09 02:26:54,739 [DEBUG] discord.client: on_ready has successfully been registered as an event
+2025-07-09 02:26:54,739 [DEBUG] discord.client: on_interaction has successfully been registered as an event
+2025-07-09 02:26:54,739 [INFO] __main__: Starting Discord bot
+2025-07-09 02:26:54,739 [DEBUG] asyncio: Using proactor: IocpProactor
+2025-07-09 02:26:54,740 [INFO] discord.client: logging in using static token
+2025-07-09 02:26:55,601 [INFO] discord.gateway: Shard ID None has connected to Gateway (Session ID: cb51056d1d1be8e1053764a40d4feb5c).
+2025-07-09 02:26:57,630 [INFO] __main__: Logged in as RTCO Shop#0792
