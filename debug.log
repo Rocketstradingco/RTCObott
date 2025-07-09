@@ -1,0 +1,64 @@
+2025-07-09 00:29:59,156 [INFO] __main__: Starting Flask app
+2025-07-09 00:29:59,176 [WARNING] werkzeug:  * Debugger is active!
+2025-07-09 00:29:59,181 [INFO] werkzeug:  * Debugger PIN: 897-057-338
+2025-07-09 00:30:30,378 [INFO] __main__: Starting Flask app
+2025-07-09 00:30:30,406 [INFO] werkzeug: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-07-09 00:30:30,406 [INFO] werkzeug: [33mPress CTRL+C to quit[0m
+2025-07-09 00:30:30,408 [INFO] werkzeug:  * Restarting with stat
+2025-07-09 00:30:30,812 [INFO] __main__: Starting Flask app
+2025-07-09 00:30:30,829 [WARNING] werkzeug:  * Debugger is active!
+2025-07-09 00:30:30,835 [INFO] werkzeug:  * Debugger PIN: 897-057-338
+2025-07-09 00:30:45,378 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 00:30:45] "GET / HTTP/1.1" 200 -
+2025-07-09 00:30:45,422 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 00:30:45] "GET /static/styles.css HTTP/1.1" 200 -
+2025-07-09 00:30:50,523 [DEBUG] __main__: Accessing embed builder
+2025-07-09 00:30:50,523 [DEBUG] data_manager: Loading data from data\inventory.json
+2025-07-09 00:30:50,526 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 00:30:50] "GET /embed-builder HTTP/1.1" 200 -
+2025-07-09 00:30:50,544 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 00:30:50] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2025-07-09 00:30:50,544 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 00:30:50] "GET /static/main.js HTTP/1.1" 200 -
+2025-07-09 00:53:49,384 [WARNING] discord.client: PyNaCl is not installed, voice will NOT be supported
+2025-07-09 00:53:49,384 [DEBUG] discord.client: on_ready has successfully been registered as an event
+2025-07-09 00:53:49,385 [DEBUG] discord.client: on_interaction has successfully been registered as an event
+2025-07-09 00:53:49,385 [INFO] __main__: Starting Discord bot
+2025-07-09 00:53:49,385 [DEBUG] asyncio: Using proactor: IocpProactor
+2025-07-09 00:53:49,385 [INFO] discord.client: logging in using static token
+2025-07-09 00:53:50,120 [INFO] discord.gateway: Shard ID None has connected to Gateway (Session ID: 9d28eadd6c8715c3309b996e11c2f57e).
+2025-07-09 00:53:52,151 [INFO] __main__: Logged in as RTCO Shop#0792
+2025-07-09 00:54:09,204 [INFO] __main__: Starting Flask app
+2025-07-09 00:54:09,233 [INFO] werkzeug: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-07-09 00:54:09,233 [INFO] werkzeug: [33mPress CTRL+C to quit[0m
+2025-07-09 00:54:09,235 [INFO] werkzeug:  * Restarting with stat
+2025-07-09 00:54:09,639 [INFO] __main__: Starting Flask app
+2025-07-09 00:54:09,654 [WARNING] werkzeug:  * Debugger is active!
+2025-07-09 00:54:09,658 [INFO] werkzeug:  * Debugger PIN: 897-057-338
+2025-07-09 00:54:22,639 [WARNING] discord.client: PyNaCl is not installed, voice will NOT be supported
+2025-07-09 00:54:22,640 [DEBUG] discord.client: on_ready has successfully been registered as an event
+2025-07-09 00:54:22,640 [DEBUG] discord.client: on_interaction has successfully been registered as an event
+2025-07-09 00:54:22,640 [INFO] __main__: Starting Discord bot
+2025-07-09 00:54:22,640 [DEBUG] asyncio: Using proactor: IocpProactor
+2025-07-09 00:54:22,641 [INFO] discord.client: logging in using static token
+2025-07-09 00:54:23,422 [INFO] discord.gateway: Shard ID None has connected to Gateway (Session ID: 57c8443459a83cdccf9876824f552b70).
+2025-07-09 00:54:30,202 [INFO] __main__: Starting Flask app
+2025-07-09 00:54:30,231 [INFO] werkzeug: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-07-09 00:54:30,231 [INFO] werkzeug: [33mPress CTRL+C to quit[0m
+2025-07-09 00:54:30,234 [INFO] werkzeug:  * Restarting with stat
+2025-07-09 00:54:30,655 [INFO] __main__: Starting Flask app
+2025-07-09 00:54:30,676 [WARNING] werkzeug:  * Debugger is active!
+2025-07-09 00:54:30,680 [INFO] werkzeug:  * Debugger PIN: 897-057-338
+2025-07-09 00:54:56,877 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 00:54:56] "GET / HTTP/1.1" 200 -
+2025-07-09 00:54:56,917 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 00:54:56] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2025-07-09 00:55:04,330 [DEBUG] __main__: Rendering inventory list
+2025-07-09 00:55:04,330 [DEBUG] data_manager: Loading data from data\inventory.json
+2025-07-09 00:55:04,334 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 00:55:04] "GET /inventory HTTP/1.1" 200 -
+2025-07-09 00:55:04,354 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 00:55:04] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2025-07-09 00:55:06,171 [DEBUG] __main__: Accessing embed builder
+2025-07-09 00:55:06,171 [DEBUG] data_manager: Loading data from data\inventory.json
+2025-07-09 00:55:06,174 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 00:55:06] "GET /embed-builder HTTP/1.1" 200 -
+2025-07-09 00:55:06,192 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 00:55:06] "GET /static/styles.css HTTP/1.1" 200 -
+2025-07-09 00:55:06,193 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 00:55:06] "[36mGET /static/main.js HTTP/1.1[0m" 304 -
+2025-07-09 00:55:13,293 [DEBUG] __main__: Rendering inventory list
+2025-07-09 00:55:13,293 [DEBUG] data_manager: Loading data from data\inventory.json
+2025-07-09 00:55:13,293 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 00:55:13] "GET /inventory HTTP/1.1" 200 -
+2025-07-09 00:55:13,313 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 00:55:13] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
