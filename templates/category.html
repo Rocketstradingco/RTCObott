@@ -17,6 +17,7 @@
     <label>Images (front/back pairs):<input type="file" name="images" multiple></label><br>
     <button type="submit" class="button">Upload</button>
   </form>
+  <p><a href="{{ url_for('uploads') }}" class="button">Manage Images</a></p>
   <ul>
   {% for card in category.cards %}
     <li class="card">

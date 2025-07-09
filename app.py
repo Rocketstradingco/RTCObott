@@ -100,6 +100,28 @@ def settings():
     return render_template('settings.html', settings=settings)
 
 
+@app.route('/uploads', methods=['GET', 'POST'])
+@require_login
+def uploads():
+    """Upload and list image files."""
+    upload_dir = os.path.join('static', 'uploads')
+    os.makedirs(upload_dir, exist_ok=True)
+    if request.method == 'POST':
+        files = request.files.getlist('images')
+        logger.debug('Uploading %s images', len(files))
+        for f in files:
+            if not f.filename:
+                continue
+            fname = secure_filename(f.filename)
+            path = os.path.join(upload_dir, fname)
+            f.save(path)
+            logger.debug('Saved image %s', path)
+    images = os.listdir(upload_dir)
+    images.sort()
+    images = [os.path.join('/static/uploads', img) for img in images]
+    return render_template('uploads.html', images=images)
+
+
 @app.route('/add-category', methods=['GET', 'POST'])
 @require_login
 def add_category():

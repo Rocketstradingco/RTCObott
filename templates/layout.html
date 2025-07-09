@@ -14,6 +14,7 @@
       <a href="{{ url_for('inventory') }}" class="{% if request.path == '/inventory' %}active{% endif %}">Inventory</a>
       <a href="{{ url_for('embed_builder') }}" class="{% if request.path == '/embed-builder' %}active{% endif %}">Embed Builder</a>
       <a href="{{ url_for('settings') }}" class="{% if request.path == '/settings' %}active{% endif %}">Settings</a>
+      <a href="{{ url_for('uploads') }}" class="{% if request.path == '/uploads' %}active{% endif %}">Uploads</a>
     </nav>
     <main>
       {% block content %}{% endblock %}
