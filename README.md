@@ -37,6 +37,8 @@ This project contains a basic Discord bot and a web-based admin UI for managing 
    ```bash
    python run.py
    ```
+5. If the bot exits immediately, check `debug.log` for a message about
+   `DISCORD_TOKEN`. Ensure your `.env` file contains a valid token.
 
 Use the **Settings** tab in the admin UI to set the channel IDs used for
 inventory messages, claims updates and the image dump. You can also adjust the
