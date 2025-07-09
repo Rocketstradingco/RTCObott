@@ -16,9 +16,11 @@ This project contains a basic Discord bot and a web-based admin UI for managing 
    pip install -r requirements.txt
    ```
 3. Copy `example.env` to `.env` and fill in your Discord bot token and preferred settings.
-4. Run the web app and bot:
+4. Run the web app and bot in separate terminals:
    ```bash
-   python app.py &
+   python app.py
+   ```
+   ```bash
    python bot.py
    ```
 

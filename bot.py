@@ -4,7 +4,7 @@ import discord
 from discord.ext import commands
 from data_manager import load_data, save_data
 
-load_dotenv('example.env')
+load_dotenv()
 TOKEN = os.getenv('DISCORD_TOKEN')
 
 intents = discord.Intents.default()
