@@ -1,0 +1,20 @@
+{% extends 'layout.html' %}
+{% block content %}
+  <h2>{{ category.name }}</h2>
+  <form method="post">
+    <input type="hidden" name="action" value="add-card">
+    <label>Name: <input type="text" name="name"></label>
+    <label>Front URL: <input type="text" name="front"></label>
+    <label>Back URL: <input type="text" name="back"></label>
+    <button type="submit" class="button">Add Card</button>
+  </form>
+  <ul>
+  {% for card in category.cards %}
+    <li class="card">
+      {{ card.name }} - {{ 'claimed by ' + card.claimed_by if card.claimed_by else 'unclaimed' }}
+    </li>
+  {% else %}
+    <li>No cards</li>
+  {% endfor %}
+  </ul>
+{% endblock %}
