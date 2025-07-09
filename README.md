@@ -40,8 +40,9 @@ The bot reads configuration from `.env` and `data/inventory.json`.
 
 Use the tabs at the top of the admin UI to switch between inventory management and the embed builder preview.
 
-All server and bot actions are logged to `debug.log` in the project root. Check
-this file when troubleshooting.
+All server and bot actions are logged to a file specified by the `DEBUG_LOG`
+environment variable (defaults to `debug.log` in the project root). Check this
+file when troubleshooting.
 
 ## Notes
 This is a starting point and does not include advanced authentication or hosting setup. Add your own enhancements as needed.

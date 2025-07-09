@@ -20,7 +20,7 @@ import os
 load_dotenv()
 
 logging.basicConfig(
-    filename='debug.log',
+    filename=os.getenv('DEBUG_LOG', 'debug.log'),
     level=logging.DEBUG,
     format='%(asctime)s [%(levelname)s] %(name)s: %(message)s',
     filemode='a'
