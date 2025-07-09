@@ -43,6 +43,7 @@ def require_login(func):
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
+    error = None
     if request.method == 'POST':
         logger.debug('Login attempt')
         if request.form.get('password') == os.getenv('ADMIN_PASSWORD', 'change-me'):
@@ -50,7 +51,8 @@ def index():
             logger.debug('Login successful')
             return redirect('/inventory')
         logger.debug('Login failed')
-    return render_template('index.html')
+        error = 'Invalid password'
+    return render_template('index.html', error=error)
 
 
 @app.route('/inventory')
