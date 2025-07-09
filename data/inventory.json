@@ -10,10 +10,9 @@
     "footer": ""
   },
   "settings": {
-    "inventory_channel_id": "",
-    "claims_channel_id": "",
-    "image_channel_id": "",
-    "grid_size": 3,
-    "claims_message_id": ""
+    "inventory_channel_id": "1384726848277053521",
+    "claims_channel_id": "1391597319149060146",
+    "image_channel_id": "1391566096842227785",
+    "grid_size": 3
   }
 }

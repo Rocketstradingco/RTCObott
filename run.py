@@ -3,9 +3,10 @@ import sys
 import os
 import time
 import signal
-
+from dotenv import load_dotenv # Add this line
 
 def main():
+    load_dotenv() # Add this line to load .env file
     env = os.environ.copy()
     if not env.get('DISCORD_TOKEN'):
         print('Error: DISCORD_TOKEN not set. Check your .env file.')
@@ -25,7 +26,6 @@ def main():
     finally:
         for p in procs:
             p.wait()
-
 
 if __name__ == '__main__':
     main()
