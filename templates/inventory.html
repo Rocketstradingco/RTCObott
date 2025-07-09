@@ -1,0 +1,15 @@
+{% extends 'layout.html' %}
+{% block content %}
+  <h2>Inventory</h2>
+  <a href="/add-category" class="button">Add Category</a>
+  <ul>
+  {% for cat in data.categories %}
+    <li class="card">
+      <strong>{{ cat.name }}</strong> ({{ cat.id }})
+      <a href="/category/{{ cat.id }}" class="button">Manage</a>
+    </li>
+  {% else %}
+    <li>No categories</li>
+  {% endfor %}
+  </ul>
+{% endblock %}
