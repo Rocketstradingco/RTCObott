@@ -28,5 +28,8 @@ This project contains a basic Discord bot and a web-based admin UI for managing 
 
 The bot reads configuration from `.env` and `data/inventory.json`.
 
+All server and bot actions are logged to `debug.log` in the project root. Check
+this file when troubleshooting.
+
 ## Notes
 This is a starting point and does not include advanced authentication or hosting setup. Add your own enhancements as needed.
