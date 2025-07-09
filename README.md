@@ -37,6 +37,8 @@ This project contains a basic Discord bot and a web-based admin UI for managing 
    ```bash
    python run.py
    ```
+   By default Flask debugging is disabled. Set `FLASK_DEBUG=1` in your `.env`
+   if you need live reload during development.
 5. If the bot exits immediately, check `debug.log` for a message about
    `DISCORD_TOKEN`. Ensure your `.env` file contains a valid token.
 
@@ -48,6 +50,18 @@ Upload reference images directly from the **Uploads** tab and then copy the URLs
 when adding cards or building embeds.
 
 The bot reads configuration from `.env` and `data/inventory.json`.
+
+### Configuration
+
+The following environment variables can be set in your `.env` file:
+
+| Variable | Description | Default |
+| --- | --- | --- |
+| `DISCORD_TOKEN` | Discord bot token | *(required)* |
+| `ADMIN_PASSWORD` | Password for the web UI | `change-me` |
+| `DEBUG_LOG` | Path to log file | `debug.log` |
+| `LOG_LEVEL` | Logging level (`INFO`, `DEBUG`, etc.) | `INFO` |
+| `FLASK_DEBUG` | Enable Flask debug mode | `false` |
 
 Use the tabs at the top of the admin UI to switch between inventory management and the embed builder preview.
 

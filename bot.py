@@ -12,7 +12,7 @@ from data_manager import load_data, save_data
 load_dotenv()
 logging.basicConfig(
     filename=os.getenv('DEBUG_LOG', 'debug.log'),
-    level=logging.DEBUG,
+    level=os.getenv('LOG_LEVEL', 'INFO').upper(),
     format='%(asctime)s [%(levelname)s] %(name)s: %(message)s',
     filemode='a'
 )
