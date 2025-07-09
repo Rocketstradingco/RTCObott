@@ -46,3 +46,6 @@ file when troubleshooting.
 
 ## Notes
 This is a starting point and does not include advanced authentication or hosting setup. Add your own enhancements as needed.
+
+## Resolving merge conflicts
+If you see conflict markers like `<<<<<<<` in your files, remove the markers and choose the desired lines. After editing, stage the changes with `git add` and run `git commit` to finalize the resolution.
