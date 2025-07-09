@@ -356,3 +356,35 @@ Traceback (most recent call last):
     raise CommandInvokeError(exc) from exc
 discord.ext.commands.errors.CommandInvokeError: Command raised an exception: HTTPException: 400 Bad Request (error code: 50035): Invalid Form Body
 In embeds.0.thumbnail.url: Not a well formed URL.
+2025-07-09 03:18:08,501 [INFO] __main__: Starting Flask app
+2025-07-09 03:18:08,513 [INFO] werkzeug: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-07-09 03:18:08,513 [INFO] werkzeug: [33mPress CTRL+C to quit[0m
+2025-07-09 03:18:08,580 [WARNING] discord.client: PyNaCl is not installed, voice will NOT be supported
+2025-07-09 03:18:08,581 [INFO] __main__: Starting Discord bot
+2025-07-09 03:18:08,581 [INFO] discord.client: logging in using static token
+2025-07-09 03:18:09,725 [INFO] discord.gateway: Shard ID None has connected to Gateway (Session ID: 7370bf04232f59bb4cf6796d0ea287fe).
+2025-07-09 03:18:11,748 [INFO] __main__: Logged in as RTCO Shop#0792
+2025-07-09 03:18:23,035 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 03:18:23] "GET / HTTP/1.1" 200 -
+2025-07-09 03:18:23,077 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 03:18:23] "GET /static/styles.css HTTP/1.1" 200 -
+2025-07-09 03:18:27,684 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 03:18:27] "[32mPOST / HTTP/1.1[0m" 302 -
+2025-07-09 03:18:27,689 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 03:18:27] "GET /inventory HTTP/1.1" 200 -
+2025-07-09 03:18:27,729 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 03:18:27] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2025-07-09 03:18:30,539 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 03:18:30] "GET /embed-builder HTTP/1.1" 200 -
+2025-07-09 03:18:30,569 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 03:18:30] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2025-07-09 03:18:30,569 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 03:18:30] "[36mGET /static/main.js HTTP/1.1[0m" 304 -
+2025-07-09 03:18:35,513 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 03:18:35] "GET /settings HTTP/1.1" 200 -
+2025-07-09 03:18:35,528 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 03:18:35] "GET /static/styles.css HTTP/1.1" 200 -
+2025-07-09 03:18:42,164 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 03:18:42] "POST /settings HTTP/1.1" 200 -
+2025-07-09 03:18:42,183 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 03:18:42] "GET /static/styles.css HTTP/1.1" 200 -
+2025-07-09 03:18:42,187 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 03:18:42] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-07-09 03:18:46,586 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 03:18:46] "GET /embed-builder HTTP/1.1" 200 -
+2025-07-09 03:18:46,608 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 03:18:46] "[36mGET /static/main.js HTTP/1.1[0m" 304 -
+2025-07-09 03:18:46,609 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 03:18:46] "GET /static/styles.css HTTP/1.1" 200 -
+2025-07-09 03:18:48,406 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 03:18:48] "GET /settings HTTP/1.1" 200 -
+2025-07-09 03:18:48,429 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 03:18:48] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2025-07-09 03:18:49,717 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 03:18:49] "GET /inventory HTTP/1.1" 200 -
+2025-07-09 03:18:49,731 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 03:18:49] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2025-07-09 03:18:54,148 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 03:18:54] "[32mGET /logout HTTP/1.1[0m" 302 -
+2025-07-09 03:18:54,151 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 03:18:54] "GET / HTTP/1.1" 200 -
+2025-07-09 03:18:54,179 [INFO] werkzeug: 127.0.0.1 - - [09/Jul/2025 03:18:54] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
