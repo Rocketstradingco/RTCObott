@@ -5,12 +5,19 @@
   <label>Title: <input type="text" name="title" value="{{ embed.title }}"></label><br>
   <label>Description:<br><textarea name="description" rows="4" cols="40">{{ embed.description }}</textarea></label><br>
   <label>Button Label: <input type="text" name="button_label" value="{{ embed.button_label or 'Explore' }}"></label><br>
+  <label>Color: <input type="color" name="color" value="{{ embed.color or '#ffffff' }}"></label><br>
+  <label>Thumbnail URL: <input type="text" name="thumbnail" value="{{ embed.thumbnail }}"></label><br>
+  <label>Image URL: <input type="text" name="image" value="{{ embed.image }}"></label><br>
+  <label>Footer Text: <input type="text" name="footer" value="{{ embed.footer }}"></label><br>
   <button type="submit" class="button">Save</button>
 </form>
 <div id="preview" class="embed-preview">
   <h3 id="p-title"></h3>
   <p id="p-desc"></p>
+  <img id="p-thumb" style="display:none; max-width:50px;"/>
+  <img id="p-image" style="display:none; max-width:200px;"/>
   <button id="p-button" class="button"></button>
+  <p id="p-footer" style="font-size:0.8em;"></p>
 </div>
 <script src="/static/main.js"></script>
 {% endblock %}

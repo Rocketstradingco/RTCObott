@@ -26,6 +26,8 @@ header, nav, main {
   padding: 10px;
   margin-top: 10px;
   border-radius: 4px;
+  display: inline-block;
+  min-width: 200px;
 }
 h1, h2, h3 {
   font-family: 'Orbitron', sans-serif;
@@ -43,6 +45,10 @@ a {
 }
 .button:hover {
   background: #7f1d1d;
+}
+.inline-form {
+  display: inline;
+  margin-left: 4px;
 }
 .card {
   background: #2c2c2c;

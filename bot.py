@@ -29,7 +29,17 @@ def build_category_embed(cat, config=None):
     config = config or {}
     title = config.get('title', cat['name'])
     description = config.get('description', 'Explore cards')
-    embed = discord.Embed(title=title, description=description)
+    try:
+        color = int(config.get('color', '#ffffff').lstrip('#'), 16)
+    except ValueError:
+        color = 0xFFFFFF
+    embed = discord.Embed(title=title, description=description, color=color)
+    if config.get('thumbnail'):
+        embed.set_thumbnail(url=config['thumbnail'])
+    if config.get('image'):
+        embed.set_image(url=config['image'])
+    if config.get('footer'):
+        embed.set_footer(text=config['footer'])
     return embed
 
 class ExploreView(discord.ui.View):

@@ -9,7 +9,8 @@ This project contains a basic Discord bot and a web-based admin UI for managing 
 - Users can browse cards in an ephemeral message grid (3x3 on desktop, 2x2 on mobile).
 - Cards include front/back images and can be claimed or unclaimed.
 - Batch add cards with paired front/back images.
-- Customize embed title, description and button text via the new Embed Builder tab with a live preview.
+- Customize embed title, description, button text, color, images and footer via the Embed Builder tab with a live preview.
+- Delete categories and cards directly from the admin pages.
 - Admin options are organized into tabs for clarity.
 
 ## Setup

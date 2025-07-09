@@ -72,6 +72,10 @@ def embed_builder():
             'title': request.form.get('title', ''),
             'description': request.form.get('description', ''),
             'button_label': request.form.get('button_label', 'Explore'),
+            'color': request.form.get('color', '#ffffff'),
+            'thumbnail': request.form.get('thumbnail', ''),
+            'image': request.form.get('image', ''),
+            'footer': request.form.get('footer', ''),
         }
         data['embed'] = embed
         save_data(data)
@@ -99,6 +103,16 @@ def add_category():
         </form>
         {% endblock %}
     ''')
+
+
+@app.route('/delete-category/<cat_id>', methods=['POST'])
+@require_login
+def delete_category(cat_id):
+    data = load_data()
+    logger.debug('Deleting category %s', cat_id)
+    data['categories'] = [c for c in data['categories'] if c['id'] != cat_id]
+    save_data(data)
+    return redirect('/inventory')
 
 
 @app.route('/category/<cat_id>', methods=['GET', 'POST'])
@@ -150,6 +164,11 @@ def manage_category(cat_id):
                 }
                 logger.debug('Batch add card %s', card['name'])
                 cat['cards'].append(card)
+            save_data(data)
+        elif action == 'delete-card':
+            card_id = request.form.get('card_id')
+            logger.debug('Deleting card %s from category %s', card_id, cat_id)
+            cat['cards'] = [c for c in cat['cards'] if c['id'] != card_id]
             save_data(data)
     return render_template('category.html', category=cat)
 

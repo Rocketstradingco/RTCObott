@@ -7,6 +7,9 @@
     <li class="card">
       <strong>{{ cat.name }}</strong> ({{ cat.id }})
       <a href="/category/{{ cat.id }}" class="button">Manage</a>
+      <form method="post" action="/delete-category/{{ cat.id }}" class="inline-form">
+        <button type="submit" class="button">Delete</button>
+      </form>
     </li>
   {% else %}
     <li>No categories</li>
