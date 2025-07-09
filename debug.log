@@ -34,3 +34,19 @@
 2025-07-09 01:48:32,360 [DEBUG] asyncio: Using proactor: IocpProactor
 2025-07-09 01:48:32,361 [INFO] discord.client: logging in using static token
 2025-07-09 01:48:33,113 [INFO] discord.gateway: Shard ID None has connected to Gateway (Session ID: 4aa363a9a14c3277d966a9d5060fde89).
+2025-07-09 01:54:22,425 [INFO] __main__: Starting Flask app
+2025-07-09 01:54:22,457 [INFO] werkzeug: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-07-09 01:54:22,457 [INFO] werkzeug: [33mPress CTRL+C to quit[0m
+2025-07-09 01:54:22,459 [INFO] werkzeug:  * Restarting with stat
+2025-07-09 01:54:22,882 [INFO] __main__: Starting Flask app
+2025-07-09 01:54:22,899 [WARNING] werkzeug:  * Debugger is active!
+2025-07-09 01:54:22,905 [INFO] werkzeug:  * Debugger PIN: 897-057-338
+2025-07-09 01:56:36,156 [INFO] __main__: Starting Flask app
+2025-07-09 01:56:36,185 [INFO] werkzeug: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-07-09 01:56:36,185 [INFO] werkzeug: [33mPress CTRL+C to quit[0m
+2025-07-09 01:56:36,187 [INFO] werkzeug:  * Restarting with stat
+2025-07-09 01:56:36,591 [INFO] __main__: Starting Flask app
+2025-07-09 01:56:36,612 [WARNING] werkzeug:  * Debugger is active!
+2025-07-09 01:56:36,615 [INFO] werkzeug:  * Debugger PIN: 897-057-338
