@@ -3,7 +3,7 @@ from data_manager import load_data, save_data
 from dotenv import load_dotenv
 import os
 
-load_dotenv('example.env')
+load_dotenv()
 
 app = Flask(__name__)
 app.secret_key = os.getenv('ADMIN_PASSWORD', 'change-me')
