@@ -1,0 +1,19 @@
+{% extends 'layout.html' %}
+{% block content %}
+<h2>Settings</h2>
+<form method="post">
+  <label>Inventory Channel ID:
+    <input type="text" name="inventory_channel_id" value="{{ settings.inventory_channel_id }}">
+  </label><br>
+  <label>Claims Channel ID:
+    <input type="text" name="claims_channel_id" value="{{ settings.claims_channel_id }}">
+  </label><br>
+  <label>Image Dump Channel ID:
+    <input type="text" name="image_channel_id" value="{{ settings.image_channel_id }}">
+  </label><br>
+  <label>Grid Size:
+    <input type="number" name="grid_size" min="2" max="3" value="{{ settings.grid_size or 3 }}">
+  </label><br>
+  <button type="submit" class="button">Save</button>
+</form>
+{% endblock %}
