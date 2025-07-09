@@ -26,6 +26,9 @@ header, nav, main {
   padding: 10px;
   margin-top: 10px;
   border-radius: 4px;
+  border: 2px solid #2c2c2c;
+  display: inline-block;
+  min-width: 200px;
 }
 h1, h2, h3 {
   font-family: 'Orbitron', sans-serif;
@@ -44,9 +47,32 @@ a {
 .button:hover {
   background: #7f1d1d;
 }
+.inline-form {
+  display: inline;
+  margin-left: 4px;
+}
 .card {
   background: #2c2c2c;
   padding: 10px;
   margin: 5px;
   border-radius: 4px;
+}
+
+.card img {
+  max-width: 50px;
+  margin-right: 8px;
+}
+
+label {
+  display: block;
+  margin: 6px 0;
+}
+
+input[type="text"], input[type="number"], textarea {
+  background: #3d3d3d;
+  border: 1px solid #2c2c2c;
+  color: #ffffff;
+  padding: 4px;
+  width: 100%;
+  max-width: 400px;
 }

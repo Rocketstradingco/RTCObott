@@ -11,7 +11,7 @@ from data_manager import load_data, save_data
 
 load_dotenv()
 logging.basicConfig(
-    filename='debug.log',
+    filename=os.getenv('DEBUG_LOG', 'debug.log'),
     level=logging.DEBUG,
     format='%(asctime)s [%(levelname)s] %(name)s: %(message)s',
     filemode='a'
@@ -29,16 +29,58 @@ def build_category_embed(cat, config=None):
     config = config or {}
     title = config.get('title', cat['name'])
     description = config.get('description', 'Explore cards')
-    embed = discord.Embed(title=title, description=description)
+    try:
+        color = int(config.get('color', '#ffffff').lstrip('#'), 16)
+    except ValueError:
+        color = 0xFFFFFF
+    embed = discord.Embed(title=title, description=description, color=color)
+    if config.get('thumbnail'):
+        embed.set_thumbnail(url=config['thumbnail'])
+    if config.get('image'):
+        embed.set_image(url=config['image'])
+    if config.get('footer'):
+        embed.set_footer(text=config['footer'])
     return embed
 
+
+async def update_claims_message(guild):
+    """Update or create the persistent claims summary message."""
+    data = load_data()
+    settings = data.get('settings', {})
+    channel_id = settings.get('claims_channel_id')
+    if not channel_id:
+        return
+    channel = guild.get_channel(int(channel_id))
+    if not channel:
+        return
+    # Build summary
+    lines = []
+    for cat in data.get('categories', []):
+        for card in cat.get('cards', []):
+            if card.get('claimed_by'):
+                lines.append(f"{card['name']} - {card['claimed_by']}")
+    summary = "\n".join(lines) or "No claims yet"
+    message_id = settings.get('claims_message_id')
+    msg = None
+    if message_id:
+        try:
+            msg = await channel.fetch_message(int(message_id))
+            await msg.edit(content=summary)
+        except discord.NotFound:
+            msg = None
+    if msg is None:
+        msg = await channel.send(summary)
+        settings['claims_message_id'] = str(msg.id)
+        save_data(data)
+
 class ExploreView(discord.ui.View):
-    def __init__(self, user, cat):
+    def __init__(self, user, cat, grid_size):
         super().__init__(timeout=300)
         self.user = user
         self.cat = cat
         self.index = 0
-        self.per_page = 9
+        self.grid_size = grid_size
+        self.per_page = grid_size * grid_size
         logger.debug('Opening ExploreView for %s in category %s', user, cat['id'])
         self.update_children()
 
@@ -49,7 +91,7 @@ class ExploreView(discord.ui.View):
         self.clear_items()
         logger.debug('Updating ExploreView buttons index=%s', self.index)
         cards = self.cat['cards'][self.index:self.index + self.per_page]
-        rows = 3
+        rows = self.grid_size
         for i, card in enumerate(cards):
             button = discord.ui.Button(label=card['name'], style=discord.ButtonStyle.grey, row=i // rows)
             button.callback = self.make_view_card(card)
@@ -118,6 +160,7 @@ class CardView(discord.ui.View):
             card['claimed_by'] = interaction.user.name
             save_data(data)
             await interaction.response.send_message('Claimed!', ephemeral=True)
+            await update_claims_message(interaction.guild)
         else:
             await interaction.response.send_message('Already claimed', ephemeral=True)
 
@@ -131,13 +174,16 @@ class CardView(discord.ui.View):
             card['claimed_by'] = None
             save_data(data)
             await interaction.response.send_message('Unclaimed', ephemeral=True)
+            await update_claims_message(interaction.guild)
         else:
             await interaction.response.send_message('Cannot unclaim', ephemeral=True)
 
     @discord.ui.button(label='Back', style=discord.ButtonStyle.secondary)
     async def back(self, interaction: discord.Interaction, button: discord.ui.Button):
         logger.debug('Returning to card list for category %s', self.cat['id'])
-        view = ExploreView(self.user, self.cat)
+        data = load_data()
+        grid = data.get('settings', {}).get('grid_size', 3)
+        view = ExploreView(self.user, self.cat, grid)
         data = load_data()
         embed = build_category_embed(self.cat, data.get('embed'))
         await interaction.response.edit_message(embed=embed, view=view)
@@ -146,15 +192,27 @@ class CardView(discord.ui.View):
 async def register(ctx):
     logger.debug('Register command invoked by %s', ctx.author)
     data = load_data()
+    settings = data.get('settings', {})
     embed_cfg = data.get('embed', {})
+    channel = ctx.channel
+    if settings.get('inventory_channel_id'):
+        chan = ctx.guild.get_channel(int(settings['inventory_channel_id']))
+        if chan:
+            channel = chan
+    claims_chan = None
+    if settings.get('claims_channel_id'):
+        claims_chan = ctx.guild.get_channel(int(settings['claims_channel_id']))
     for cat in data['categories']:
         embed = build_category_embed(cat, embed_cfg)
         view = discord.ui.View()
-        view.add_item(discord.ui.Button(label='Explore', custom_id=f'explore_{cat["id"]}'))
-        msg = await ctx.send(embed=embed, view=view)
+        label = embed_cfg.get('button_label', 'Explore')
+        view.add_item(discord.ui.Button(label=label, custom_id=f'explore_{cat["id"]}'))
+        msg = await channel.send(embed=embed, view=view)
         cat['message_id'] = msg.id
     save_data(data)
     await ctx.send('Registration complete.')
+    if claims_chan:
+        await update_claims_message(ctx.guild)
 
 @bot.event
 async def on_ready():
@@ -173,7 +231,14 @@ async def on_interaction(interaction: discord.Interaction):
                 logger.debug('Category %s missing for interaction', cat_id)
                 await interaction.response.send_message('Category missing', ephemeral=True)
                 return
-            view = ExploreView(interaction.user, cat)
+            settings = data.get('settings', {})
+            grid = settings.get('grid_size', 3)
+            try:
+                if interaction.user.is_on_mobile():
+                    grid = min(grid, 2)
+            except AttributeError:
+                pass
+            view = ExploreView(interaction.user, cat, grid)
             embed = build_category_embed(cat, data.get('embed'))
             await interaction.response.send_message(embed=embed, ephemeral=True, view=view)
 
