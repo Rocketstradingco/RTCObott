@@ -1,29 +1,4 @@
 {
-  "categories": [
-    {
-      "id": "1",
-<<<<<<< Updated upstream
-      "name": "Pokemon",
-      "cards": [
-        {
-          "id": "1",
-          "name": "",
-          "front": "",
-          "back": "",
-          "claimed_by": null
-        },
-        {
-          "id": "2",
-          "name": "",
-          "front": "",
-          "back": "",
-          "claimed_by": null
-        }
-      ]
-=======
-      "name": "Pokemon 1",
-      "cards": []
->>>>>>> Stashed changes
-    }
-  ]
+  "categories": [],
+  "embed": {}
 }

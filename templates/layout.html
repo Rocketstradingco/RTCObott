@@ -10,6 +10,10 @@
     <header>
       <h1>Trading Card Admin</h1>
     </header>
+    <nav class="tabs">
+      <a href="{{ url_for('inventory') }}" class="{% if request.path == '/inventory' %}active{% endif %}">Inventory</a>
+      <a href="{{ url_for('embed_builder') }}" class="{% if request.path == '/embed-builder' %}active{% endif %}">Embed Builder</a>
+    </nav>
     <main>
       {% block content %}{% endblock %}
     </main>
