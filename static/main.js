@@ -17,6 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
     pDesc.textContent = desc.value;
     pButton.textContent = btnLabel.value;
     pButton.style.background = color.value;
+    document.getElementById('preview').style.borderColor = color.value;
     if (thumbnail.value) {
       pThumb.src = thumbnail.value;
       pThumb.style.display = 'block';

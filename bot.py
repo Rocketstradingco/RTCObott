@@ -43,12 +43,13 @@ def build_category_embed(cat, config=None):
     return embed
 
 class ExploreView(discord.ui.View):
-    def __init__(self, user, cat):
+    def __init__(self, user, cat, grid_size):
         super().__init__(timeout=300)
         self.user = user
         self.cat = cat
         self.index = 0
-        self.per_page = 9
+        self.grid_size = grid_size
+        self.per_page = grid_size * grid_size
         logger.debug('Opening ExploreView for %s in category %s', user, cat['id'])
         self.update_children()
 
@@ -59,7 +60,7 @@ class ExploreView(discord.ui.View):
         self.clear_items()
         logger.debug('Updating ExploreView buttons index=%s', self.index)
         cards = self.cat['cards'][self.index:self.index + self.per_page]
-        rows = 3
+        rows = self.grid_size
         for i, card in enumerate(cards):
             button = discord.ui.Button(label=card['name'], style=discord.ButtonStyle.grey, row=i // rows)
             button.callback = self.make_view_card(card)
@@ -147,7 +148,9 @@ class CardView(discord.ui.View):
     @discord.ui.button(label='Back', style=discord.ButtonStyle.secondary)
     async def back(self, interaction: discord.Interaction, button: discord.ui.Button):
         logger.debug('Returning to card list for category %s', self.cat['id'])
-        view = ExploreView(self.user, self.cat)
+        data = load_data()
+        grid = data.get('settings', {}).get('grid_size', 3)
+        view = ExploreView(self.user, self.cat, grid)
         data = load_data()
         embed = build_category_embed(self.cat, data.get('embed'))
         await interaction.response.edit_message(embed=embed, view=view)
@@ -156,12 +159,18 @@ class CardView(discord.ui.View):
 async def register(ctx):
     logger.debug('Register command invoked by %s', ctx.author)
     data = load_data()
+    settings = data.get('settings', {})
     embed_cfg = data.get('embed', {})
+    channel = ctx.channel
+    if settings.get('inventory_channel_id'):
+        chan = ctx.guild.get_channel(int(settings['inventory_channel_id']))
+        if chan:
+            channel = chan
     for cat in data['categories']:
         embed = build_category_embed(cat, embed_cfg)
         view = discord.ui.View()
         view.add_item(discord.ui.Button(label='Explore', custom_id=f'explore_{cat["id"]}'))
-        msg = await ctx.send(embed=embed, view=view)
+        msg = await channel.send(embed=embed, view=view)
         cat['message_id'] = msg.id
     save_data(data)
     await ctx.send('Registration complete.')
@@ -183,7 +192,14 @@ async def on_interaction(interaction: discord.Interaction):
                 logger.debug('Category %s missing for interaction', cat_id)
                 await interaction.response.send_message('Category missing', ephemeral=True)
                 return
-            view = ExploreView(interaction.user, cat)
+            settings = data.get('settings', {})
+            grid = settings.get('grid_size', 3)
+            try:
+                if interaction.user.is_on_mobile():
+                    grid = min(grid, 2)
+            except AttributeError:
+                pass
+            view = ExploreView(interaction.user, cat, grid)
             embed = build_category_embed(cat, data.get('embed'))
             await interaction.response.send_message(embed=embed, ephemeral=True, view=view)
 

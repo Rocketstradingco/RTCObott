@@ -5,7 +5,7 @@
   <ul>
   {% for cat in data.categories %}
     <li class="card">
-      <strong>{{ cat.name }}</strong> ({{ cat.id }})
+      <strong>{{ cat.name }}</strong> ({{ cat.id }}) - {{ cat.cards|length }} cards
       <a href="/category/{{ cat.id }}" class="button">Manage</a>
       <form method="post" action="/delete-category/{{ cat.id }}" class="inline-form">
         <button type="submit" class="button">Delete</button>

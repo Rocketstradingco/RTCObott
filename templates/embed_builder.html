@@ -11,7 +11,7 @@
   <label>Footer Text: <input type="text" name="footer" value="{{ embed.footer }}"></label><br>
   <button type="submit" class="button">Save</button>
 </form>
-<div id="preview" class="embed-preview">
+<div id="preview" class="embed-preview" style="border-color: {{ embed.color or '#2c2c2c' }}">
   <h3 id="p-title"></h3>
   <p id="p-desc"></p>
   <img id="p-thumb" style="display:none; max-width:50px;"/>

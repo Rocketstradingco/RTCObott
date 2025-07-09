@@ -17,6 +17,12 @@ DEFAULT_DATA = {
         "image": "",
         "footer": "",
     },
+    "settings": {
+        "inventory_channel_id": "",
+        "claims_channel_id": "",
+        "image_channel_id": "",
+        "grid_size": 3,
+    },
 }
 
 

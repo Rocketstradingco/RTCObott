@@ -82,6 +82,24 @@ def embed_builder():
     return render_template('embed_builder.html', embed=embed)
 
 
+@app.route('/settings', methods=['GET', 'POST'])
+@require_login
+def settings():
+    logger.debug('Accessing settings')
+    data = load_data()
+    settings = data.get('settings', {})
+    if request.method == 'POST':
+        settings = {
+            'inventory_channel_id': request.form.get('inventory_channel_id', ''),
+            'claims_channel_id': request.form.get('claims_channel_id', ''),
+            'image_channel_id': request.form.get('image_channel_id', ''),
+            'grid_size': int(request.form.get('grid_size', '3')),
+        }
+        data['settings'] = settings
+        save_data(data)
+    return render_template('settings.html', settings=settings)
+
+
 @app.route('/add-category', methods=['GET', 'POST'])
 @require_login
 def add_category():

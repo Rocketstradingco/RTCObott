@@ -12,6 +12,7 @@ This project contains a basic Discord bot and a web-based admin UI for managing 
 - Customize embed title, description, button text, color, images and footer via the Embed Builder tab with a live preview.
 - Delete categories and cards directly from the admin pages.
 - Admin options are organized into tabs for clarity.
+- Configure channel IDs and grid size from the new **Settings** tab.
 
 ## Setup
 1. Create a Discord application and bot, then obtain your token.
@@ -29,6 +30,10 @@ This project contains a basic Discord bot and a web-based admin UI for managing 
    ```bash
    python bot.py
    ```
+
+Use the **Settings** tab in the admin UI to set the channel IDs used for
+inventory messages, claims updates and the image dump. You can also adjust the
+grid size used when browsing cards.
 
 The bot reads configuration from `.env` and `data/inventory.json`.
 
