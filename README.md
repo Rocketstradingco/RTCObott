@@ -32,6 +32,11 @@ This project contains a basic Discord bot and a web-based admin UI for managing 
    ```bash
    python bot.py
    ```
+   Do **not** combine these commands with an `&` on Windows as it can close the
+   event loop prematurely. To start both at once you can instead run:
+   ```bash
+   python run.py
+   ```
 
 Use the **Settings** tab in the admin UI to set the channel IDs used for
 inventory messages, claims updates and the image dump. You can also adjust the
