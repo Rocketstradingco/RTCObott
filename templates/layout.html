@@ -15,6 +15,10 @@
       <a href="{{ url_for('embed_builder') }}" class="{% if request.path == '/embed-builder' %}active{% endif %}">Embed Builder</a>
       <a href="{{ url_for('settings') }}" class="{% if request.path == '/settings' %}active{% endif %}">Settings</a>
       <a href="{{ url_for('uploads') }}" class="{% if request.path == '/uploads' %}active{% endif %}">Uploads</a>
+      <span style="flex:1"></span>
+      {% if session.get('logged_in') %}
+      <a href="{{ url_for('logout') }}">Logout</a>
+      {% endif %}
     </nav>
     <main>
       {% block content %}{% endblock %}

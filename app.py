@@ -7,6 +7,7 @@ from flask import (
     session,
     url_for,
 )
+from functools import wraps
 from werkzeug.utils import secure_filename
 from data_manager import load_data, save_data
 import logging
@@ -21,7 +22,7 @@ load_dotenv()
 
 logging.basicConfig(
     filename=os.getenv('DEBUG_LOG', 'debug.log'),
-    level=logging.DEBUG,
+    level=os.getenv('LOG_LEVEL', 'INFO').upper(),
     format='%(asctime)s [%(levelname)s] %(name)s: %(message)s',
     filemode='a'
 )
@@ -32,12 +33,13 @@ app.secret_key = os.getenv('ADMIN_PASSWORD', 'change-me')
 
 
 def require_login(func):
+    @wraps(func)
     def wrapper(*args, **kwargs):
         if not session.get('logged_in'):
             logger.debug('Unauthorized access attempt to %s', request.path)
             return redirect('/')
         return func(*args, **kwargs)
-    wrapper.__name__ = func.__name__
+
     return wrapper
 
 
@@ -53,6 +55,12 @@ def index():
         logger.debug('Login failed')
         error = 'Invalid password'
     return render_template('index.html', error=error)
+
+
+@app.route('/logout')
+def logout():
+    session.clear()
+    return redirect('/')
 
 
 @app.route('/inventory')
@@ -217,4 +225,5 @@ def manage_category(cat_id):
 
 if __name__ == '__main__':
     logger.info('Starting Flask app')
-    app.run(debug=True)
+    debug = os.getenv('FLASK_DEBUG', 'false').lower() in ('1', 'true', 'yes')
+    app.run(debug=debug)
