@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>{{ title or 'Admin' }}</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Orbitron:wght@500;700&display=swap">
+    <link rel="stylesheet" href="/static/styles.css">
+  </head>
+  <body>
+    <header>
+      <h1>Trading Card Admin</h1>
+    </header>
+    <nav class="tabs">
+      <a href="{{ url_for('inventory') }}" class="{% if request.path == '/inventory' %}active{% endif %}">Inventory</a>
+      <a href="{{ url_for('embed_builder') }}" class="{% if request.path == '/embed-builder' %}active{% endif %}">Embed Builder</a>
+    </nav>
+    <main>
+      {% block content %}{% endblock %}
+    </main>
+  </body>
+</html>
