@@ -1,0 +1,32 @@
+body {
+  background: #1a1a1a;
+  color: #f0f0f0;
+  font-family: 'Inter', sans-serif;
+}
+header, nav, main {
+  margin: 0 auto;
+  max-width: 800px;
+}
+h1, h2, h3 {
+  font-family: 'Orbitron', sans-serif;
+  color: #ffeb3b;
+}
+a {
+  color: #ef4444;
+}
+.button {
+  background: #b91c1c;
+  color: #ffffff;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+.button:hover {
+  background: #7f1d1d;
+}
+.card {
+  background: #2c2c2c;
+  padding: 10px;
+  margin: 5px;
+  border-radius: 4px;
+}
