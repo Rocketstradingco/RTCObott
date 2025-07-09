@@ -50,3 +50,5 @@
 2025-07-09 02:09:59,725 [INFO] __main__: Starting Flask app
 2025-07-09 02:09:59,743 [WARNING] werkzeug:  * Debugger is active!
 2025-07-09 02:09:59,747 [INFO] werkzeug:  * Debugger PIN: 897-057-338
+2025-07-09 02:10:24,118 [INFO] werkzeug:  * Detected change in 'C:\\Users\\RTCO STREAMS\\Documents\\git\\RTCObott\\app.py', reloading
+2025-07-09 02:10:24,148 [INFO] werkzeug:  * Restarting with stat
